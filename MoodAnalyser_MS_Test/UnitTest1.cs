@@ -75,7 +75,14 @@ namespace MoodAnalyser_MS_Test
         public void GivenMoodAnalyseClassName_ShouldReturnMoodAnalyserObject()
         {
             object expected = new MoodAnalysers();
-            object obj = MoodAnalyserFactory.CreateeMoodAnalyse("MoodAnalyser.MoodAnalysers", "MoodAnalysers");
+            object obj = MoodAnalyserFactory.CreateMoodAnalyse("MoodAnalyser.MoodAnalysers", "MoodAnalysers");
+            expected.Equals(obj);
+        }
+        [TestMethod]
+        public void GivenMoodAnalyseClassName_ShouldReturnMoodAnalyserObject_UsingParameterizdConstructor()
+        {
+            object expected = new MoodAnalysers("HAPPY");
+            object obj = MoodAnalyserFactory.CreateMoodAnalyserUsingParameterizedConstructor("MoodAnalyser.MoodAnalysers", "MoodAnalysers", "HAPPY");
             expected.Equals(obj);
         }
     }
